@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>access records data</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="tp">Topic_name</label>
+            <select name="TP" id="tp">
+                {% for i in w %}
+                <option value="{{i}}">{{i.Topic_name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="nm">NAME</label>
+            <select name="NM" id="nm">
+                {% for i in w %}
+                <option value="{{i}}">{{i.Name}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="url">URL</label>
+            <select name="ur" id="url">
+                {% for i in w %}
+                <option value="{{i}}">{{i.URL}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <br>
+            <label for="DT">DATE</label>
+            <input type="date" name="dt" id="DT"><br><br>
+
+                <input type="submit" value="submit">
+    
+            </form>
+    </center>
+    
+</body>
+</html>

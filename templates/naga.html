@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>THIS IS NAGA HTML </h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="tp">Topic name</label>
+            <select name="tn" id="tp">
+                {% for i in T %}
+                <option value="{{i}}">{{i.Topic_name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="wb">NAME</label>
+            <input type="text" name="WD" id="wb"><br><br>
+            <label for="url">URL</label>
+            <input type="url" name="ul" id="url">
+            <br>
+            <br>
+            <input type="submit" value="submit">
+            
+        </form>
+    </center>
+    
+</body>
+</html>
